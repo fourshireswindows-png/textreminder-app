@@ -354,13 +354,72 @@ function HomePage({ onSignup, onLogin }) {
 
       {/* Pricing */}
       <section style={{ padding:"72px 24px", background:T.light }}>
-        <div style={{ maxWidth:520, margin:"0 auto", textAlign:"center" }}>
-          <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:800, color:T.text, marginBottom:10 }}>
-            One simple price
-          </h2>
-          <p style={{ fontSize:15, color:T.muted, marginBottom:36, lineHeight:1.7 }}>
-            £20/month or £180/year. No setup fees. No hidden costs.
-          </p>
+        <div style={{ maxWidth:960, margin:"0 auto" }}>
+          <div style={{ textAlign:"center", marginBottom:48 }}>
+            <h2 style={{ fontSize:"clamp(24px,4vw,36px)", fontWeight:800, color:T.text, marginBottom:10 }}>
+              Simple, transparent pricing
+            </h2>
+            <p style={{ fontSize:15, color:T.muted, lineHeight:1.7 }}>
+              Pay for what you use. No setup fees. No hidden costs. 14-day free trial on every plan.
+            </p>
+          </div>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:16 }}>
+            {[
+              { name:"Starter", price:"£9.99", msgs:40, popular:false,
+                features:["40 reminders/month","SMS, Email & WhatsApp","All calendar types","Message log","AI support"] },
+              { name:"Pro", price:"£19.99", msgs:100, popular:true,
+                features:["100 reminders/month","SMS, Email & WhatsApp","All calendar types","Unused msgs roll over","Message log","AI support"] },
+              { name:"Business", price:"£34.99", msgs:250, popular:false,
+                features:["250 reminders/month","SMS, Email & WhatsApp","All calendar types","Unused msgs roll over","Message log","Priority support"] },
+              { name:"Enterprise", price:"£59.99", msgs:999, popular:false,
+                features:["Unlimited reminders","SMS, Email & WhatsApp","All calendar types","Unused msgs roll over","Message log","Priority support"] },
+            ].map((plan,i)=>(
+              <div key={i} style={{ background:plan.popular?"linear-gradient(135deg,#0f172a,#1e0a3c)":"#fff",
+                border:plan.popular?"2px solid "+T.purple:"1px solid "+T.border,
+                borderRadius:16, padding:"24px 20px", position:"relative" }}>
+                {plan.popular && (
+                  <div style={{ position:"absolute", top:-12, left:"50%", transform:"translateX(-50%)",
+                    background:"linear-gradient(135deg,#ec4899,"+T.purple+")", color:"#fff",
+                    fontSize:10, fontWeight:700, padding:"4px 12px", borderRadius:20,
+                    letterSpacing:"1px", textTransform:"uppercase", whiteSpace:"nowrap" }}>
+                    Most Popular
+                  </div>
+                )}
+                <div style={{ fontSize:13, fontWeight:700, color:plan.popular?"rgba(255,255,255,0.6)":T.muted,
+                  textTransform:"uppercase", letterSpacing:"1px", marginBottom:8 }}>{plan.name}</div>
+                <div style={{ fontSize:36, fontWeight:800, color:plan.popular?"#fff":T.text,
+                  lineHeight:1, marginBottom:4 }}>{plan.price}
+                  <span style={{ fontSize:14, fontWeight:400, color:plan.popular?"rgba(255,255,255,0.4)":T.muted }}>/mo</span>
+                </div>
+                <div style={{ fontSize:12, color:plan.popular?"rgba(255,255,255,0.4)":T.muted,
+                  marginBottom:20 }}>{plan.msgs===999?"Unlimited":plan.msgs} reminders/month</div>
+                {plan.features.map((f,j)=>(
+                  <div key={j} style={{ display:"flex", alignItems:"center", gap:8,
+                    marginBottom:8, fontSize:12,
+                    color:plan.popular?"rgba(255,255,255,0.8)":"#374151" }}>
+                    <span style={{ color:T.green, flexShrink:0 }}>&#x2713;</span>{f}
+                  </div>
+                ))}
+                <button onClick={onSignup} style={{ width:"100%", marginTop:20,
+                  background:plan.popular?"linear-gradient(135deg,#ec4899,"+T.purple+")":"#f3e8ff",
+                  color:plan.popular?"#fff":T.purple, border:"none", borderRadius:10,
+                  padding:"11px", fontSize:13, fontWeight:700, cursor:"pointer",
+                  fontFamily:"inherit" }}>
+                  Start Free Trial
+                </button>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign:"center", marginTop:24, fontSize:13, color:T.muted }}>
+            All plans include a 14-day free trial · No credit card required · Cancel anytime
+          </div>
+          <div style={{ background:"#fef9c3", borderRadius:12, padding:"14px 18px",
+            display:"flex", alignItems:"center", gap:12, marginTop:20 }}>
+            <span style={{ fontSize:20 }}>&#x1F4A1;</span>
+            <div style={{ fontSize:13, color:"#713f12" }}>
+              <strong>Pro and Business plans:</strong> unused reminders roll over for one month so you never waste your allowance.
+            </div>
+          </div>
           <div style={{ background:"linear-gradient(135deg,#0f172a,#1e0a3c)", borderRadius:20,
             padding:"36px 32px", marginBottom:16 }}>
             <div style={{ fontSize:13, color:"rgba(255,255,255,0.4)", letterSpacing:"2px",
