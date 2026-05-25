@@ -221,8 +221,9 @@ function HomePage({ onSignup, onLogin }) {
             <span style={{ width:6, height:6, borderRadius:"50%", background:T.green, display:"inline-block" }}/>
             Simple · Automatic · Affordable
           </div>
-          <h1 style={{ fontSize:"clamp(28px,4vw,44px)", fontWeight:700, lineHeight:1.2,
-            color:T.text, marginBottom:14, margin:"0 0 14px" }}>
+          <h1 style={{ fontSize:"clamp(24px,3.5vw,40px)", fontWeight:600, lineHeight:1.3,
+            color:T.text, marginBottom:14, margin:"0 0 14px",
+            fontFamily:"'Outfit','DM Sans',sans-serif", letterSpacing:"-0.5px" }}>
             Never lose a job to<br/>
             <span style={{ background:"linear-gradient(135deg,#ec4899,#a855f7)",
               WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent" }}>

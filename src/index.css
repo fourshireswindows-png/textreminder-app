@@ -1,49 +1,67 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'DM Sans', 'Segoe UI', sans-serif; background: #f8fafc; color: #0f172a; }
-input, textarea, select, button { font-family: inherit; }
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-a { text-decoration: none; color: inherit; }
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-.btn-primary {
-  background: linear-gradient(135deg, #ec4899, #a855f7);
-  color: #fff; border: none; border-radius: 10px;
-  padding: 12px 24px; font-size: 14px; font-weight: 700;
-  cursor: pointer; transition: all 0.2s;
-  box-shadow: 0 4px 16px rgba(168,85,247,0.3);
-}
-.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(168,85,247,0.45); }
-.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    <!-- Primary SEO -->
+    <title>TextReminder – Automatic SMS Appointment Reminders for UK Tradespeople</title>
+    <meta name="description" content="Stop losing jobs to no-shows. TextReminder sends automatic SMS, email and WhatsApp appointment reminders to your customers 24 hours before every job. Built for UK tradespeople. From just £20/month." />
+    <meta name="keywords" content="SMS appointment reminder UK, text reminder tradespeople, appointment reminder window cleaner, reduce no-shows tradesperson, Google Calendar SMS reminder, automatic appointment reminder UK" />
+    <link rel="canonical" href="https://textreminder.co.uk" />
 
-.btn-outline {
-  background: transparent; color: #a855f7;
-  border: 2px solid #a855f7; border-radius: 10px;
-  padding: 11px 24px; font-size: 14px; font-weight: 700;
-  cursor: pointer; transition: all 0.2s;
-}
-.btn-outline:hover { background: #a855f7; color: #fff; }
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://textreminder.co.uk" />
+    <meta property="og:title" content="TextReminder – Automatic Appointment Reminders for UK Tradespeople" />
+    <meta property="og:description" content="Stop losing jobs to no-shows. Automatic SMS, email and WhatsApp reminders. Works with Google Calendar, Apple Calendar and Outlook. From £20/month." />
+    <meta property="og:image" content="https://textreminder.co.uk/og-image.png" />
 
-.card {
-  background: #fff; border: 1px solid #e2e8f0;
-  border-radius: 14px; overflow: hidden;
-}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TextReminder – Appointment Reminders for UK Tradespeople" />
+    <meta name="twitter:description" content="Stop losing jobs to no-shows. Automatic SMS, email and WhatsApp reminders from £20/month." />
 
-.input {
-  width: 100%; border: 1px solid #e2e8f0; border-radius: 8px;
-  padding: 10px 13px; font-size: 14px; color: #0f172a;
-  outline: none; background: #fff; transition: border-color 0.15s;
-}
-.input:focus { border-color: #a855f7; }
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="GB" />
+    <meta name="geo.placename" content="United Kingdom" />
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TextReminder",
+      "url": "https://textreminder.co.uk",
+      "description": "Automatic SMS, email and WhatsApp appointment reminders for UK tradespeople. Works with Google Calendar, Apple Calendar and Outlook.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "20.00",
+        "priceCurrency": "GBP",
+        "priceSpecification": {
+          "@type": "RecurringChargeSpecification",
+          "billingDuration": "P1M"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1"
+      },
+      "areaServed": "GB",
+      "inLanguage": "en-GB"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
