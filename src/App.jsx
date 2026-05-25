@@ -193,7 +193,7 @@ function HomePage({ onSignup, onLogin }) {
           <div style={{ display:"flex", alignItems:"center", gap:10 }}>
             <Logo size={34}/>
             <div>
-              <div style={{ fontSize:15, fontWeight:800, color:T.text, lineHeight:1 }}>
+              <div style={{ fontSize:15, fontWeight:700, color:T.text, lineHeight:1 }}>
                 text<span style={{ background:"linear-gradient(135deg,#ec4899,#a855f7)",
                   WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent" }}>reminder</span>
               </div>
@@ -221,7 +221,7 @@ function HomePage({ onSignup, onLogin }) {
             <span style={{ width:6, height:6, borderRadius:"50%", background:T.green, display:"inline-block" }}/>
             Simple · Automatic · Affordable
           </div>
-          <h1 style={{ fontSize:"clamp(30px,5vw,54px)", fontWeight:800, lineHeight:1.15,
+          <h1 style={{ fontSize:"clamp(28px,4vw,44px)", fontWeight:700, lineHeight:1.2,
             color:T.text, marginBottom:14, margin:"0 0 14px" }}>
             Never lose a job to<br/>
             <span style={{ background:"linear-gradient(135deg,#ec4899,#a855f7)",
@@ -537,7 +537,7 @@ function DashLayout({ page, setPage, user, onSignOut, children }) {
           <div style={{ display:"flex", alignItems:"center", gap:9 }}>
             <Logo size={30}/>
             <div>
-              <div style={{ fontSize:14, fontWeight:800, color:"#fff", lineHeight:1 }}>
+              <div style={{ fontSize:14, fontWeight:700, color:"#fff", lineHeight:1 }}>
                 text<span style={{ background:"linear-gradient(135deg,#ec4899,#a855f7)",
                   WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent" }}>reminder</span>
               </div>
